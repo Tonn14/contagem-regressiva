@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+/* Importa a fonte Poppins do Google Fonts com diferentes pesos */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    /* Configurações gerais de reset de margens, preenchimento e caixa-modelo, e escolhe a fonte Poppins */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #2f363e;
+    /* Configurações de posicionamento e estilo para o corpo da página */
+}
+
+#time {
+    display: flex;
+    gap: 30px;
+    /* Configurações para a exibição da contagem regressiva, usando flexbox e espaçamento entre os elementos */
+}
+
+#time .circulo {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Configurações para os círculos que representam as unidades de tempo */
+}
+
+#time .circulo svg {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform: rotate(270deg);
+    /* Configurações para os elementos SVG que desenham os círculos */
+}
+
+#time .circulo svg circle {
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    stroke-width: 8;
+    stroke: #282828;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+    /* Configurações para os círculos dentro dos elementos SVG */
+}
+
+#time .circulo svg circle:nth-child(2) {
+    stroke: var(--clr);
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    /* Configurações para a animação do preenchimento do círculo */
+}
+
+#time div {
+    position: absolute;
+    text-align: center;
+    font-weight: 500;
+    color: #fff;
+    font-size: 1.5em;
+    /* Configurações para os números dentro dos círculos */
+}
+
+#time div span {
+    position: absolute;
+    transform: translateX(-50%) translateY(-10%);
+    font-size: 0.35em;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    /* Configurações para os rótulos de unidade (Dias, Horas, Minutos, Segundos) */
+}
+
+#time .dots {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 1000;
+    /* Configurações para os pontos no fundo dos círculos */
+}
+
+#time .dots::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    width: 15px;
+    height: 15px;
+    background: var(--clr);
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--clr), 0 0 60px var(--clr);
+    /* Configurações para os pontos no fundo dos círculos, incluindo sombreamento */
+}
+
+.novoAno {
+    font-size: 8em;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    line-height: 0.6em;
+    display: none;
+    /* Configurações para o elemento de saudação de Ano Novo */
+}
+
+.novoAno span {
+    font-size: 0.5em;
+    font-weight: 300;
+    /* Configurações para o estilo do texto da saudação */
+}
